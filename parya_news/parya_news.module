@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the parya news feature.
+ */
+
+include_once('parya_news.features.inc');
