@@ -303,7 +303,7 @@ function parya_news_field_default_fields() {
           0 => 'tid',
         ),
       ),
-      'module' => 'taxonomy',
+      'module' => 'i18n_taxonomy',
       'settings' => array(
         'allowed_values' => array(
           0 => array(

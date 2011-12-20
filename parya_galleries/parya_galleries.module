@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Parya Galleries feature.
+ */
+
+include_once('parya_galleries.features.inc');
