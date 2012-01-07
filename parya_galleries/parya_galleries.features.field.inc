@@ -324,7 +324,7 @@ function parya_galleries_field_default_fields() {
           'progress_indicator' => 'bar',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '2',
       ),
     ),
   );

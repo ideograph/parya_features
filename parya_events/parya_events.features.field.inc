@@ -324,7 +324,7 @@ function parya_events_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'event',
       'deleted' => '0',
-      'description' => 'this is the main image for the event',
+      'description' => 'this is the main image for the event and will appear in indexes and on the actual post.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -368,12 +368,17 @@ function parya_events_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_image',
-      'label' => 'image',
+      'label' => 'Main Image',
       'required' => 0,
       'settings' => array(
-        'alt_field' => 0,
+        'alt_field' => 1,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
+        'imagecrop' => array(
+          'block-highlight' => 0,
+          'frontpage_slide' => 0,
+          'page_slide' => 0,
+        ),
         'max_filesize' => '',
         'max_resolution' => '1600x1600',
         'min_resolution' => '',
@@ -385,14 +390,19 @@ function parya_events_field_default_fields() {
         'module' => 'image',
         'settings' => array(
           'filefield_sources' => array(
-            'filefield_sources' => array(),
+            'filefield_sources' => array(
+              'attach' => 0,
+              'imce' => 0,
+              'reference' => 0,
+              'remote' => 0,
+            ),
             'source_attach' => array(
-              'absolute' => 0,
-              'attach_mode' => 'move',
+              'absolute' => '0',
+              'attach_mode' => 'copy',
               'path' => 'file_attach',
             ),
             'source_imce' => array(
-              'imce_mode' => 0,
+              'imce_mode' => '0',
             ),
             'source_reference' => array(
               'autocomplete' => '0',
@@ -403,11 +413,42 @@ function parya_events_field_default_fields() {
           'insert_default' => 'auto',
           'insert_styles' => array(
             'auto' => 'auto',
+            'colorbox__block-highlight' => 0,
+            'colorbox__bw' => 0,
+            'colorbox__frontpage_slide' => 0,
+            'colorbox__frontpage_slide_bw' => 0,
+            'colorbox__large' => 0,
+            'colorbox__lightbox' => 0,
+            'colorbox__medium' => 0,
+            'colorbox__node' => 0,
+            'colorbox__node-landscape' => 0,
+            'colorbox__node-portrait' => 0,
+            'colorbox__page_slide' => 0,
+            'colorbox__sq_thumb_lg' => 0,
+            'colorbox__sq_thumb_med' => 0,
+            'colorbox__sq_thumb_sm' => 0,
+            'colorbox__sq_thumb_xsm' => 0,
+            'colorbox__square_thumbnail' => 0,
+            'colorbox__teaser-list' => 0,
+            'colorbox__thumbnail' => 0,
             'image' => 0,
+            'image_block-highlight' => 0,
+            'image_bw' => 0,
+            'image_frontpage_slide' => 0,
+            'image_frontpage_slide_bw' => 0,
             'image_large' => 0,
             'image_lightbox' => 0,
             'image_medium' => 0,
+            'image_node' => 0,
             'image_node-landscape' => 0,
+            'image_node-portrait' => 0,
+            'image_page_slide' => 0,
+            'image_sq_thumb_lg' => 0,
+            'image_sq_thumb_med' => 0,
+            'image_sq_thumb_sm' => 0,
+            'image_sq_thumb_xsm' => 0,
+            'image_square_thumbnail' => 0,
+            'image_teaser-list' => 0,
             'image_thumbnail' => 0,
             'link' => 0,
           ),
@@ -445,13 +486,13 @@ function parya_events_field_default_fields() {
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
+          'audio' => 0,
           'event' => 0,
           'frontpage_slide' => 0,
           'gallery' => 'gallery',
           'news' => 0,
           'page' => 0,
           'press' => 0,
-          'room' => 0,
           'slideshow' => 0,
           'video' => 0,
           'webform' => 0,
@@ -459,7 +500,7 @@ function parya_events_field_default_fields() {
         'view' => array(
           'args' => array(),
           'display_name' => 'references_1',
-          'view_name' => 'galleries',
+          'view_name' => 'parya_galleries',
         ),
       ),
       'translatable' => '0',
@@ -604,12 +645,12 @@ function parya_events_field_default_fields() {
   t('Description');
   t('Event Gallery');
   t('If the event is happening at parya, select the room it is happening in.');
+  t('Main Image');
   t('Select from existing Event Galleries to link them to this event');
   t('event date');
   t('event room');
   t('event type');
-  t('image');
-  t('this is the main image for the event');
+  t('this is the main image for the event and will appear in indexes and on the actual post.');
 
   return $fields;
 }

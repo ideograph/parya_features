@@ -328,6 +328,148 @@ function parya_news_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-news-field_news_attachment'
+  $fields['node-news-field_news_attachment'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_news_attachment',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 1,
+        'display_field' => 1,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'news',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => 7,
+        ),
+        'rss' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_news_attachment',
+      'label' => 'Attachment(s)',
+      'required' => 0,
+      'settings' => array(
+        'description_field' => 1,
+        'file_directory' => 'attachments',
+        'file_extensions' => 'pdf txt rtf doc docx xls xlsx ppt zip png jpg jpeg',
+        'max_filesize' => '5 MB',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(
+              'attach' => 0,
+              'imce' => 0,
+              'reference' => 0,
+              'remote' => 'remote',
+            ),
+            'source_attach' => array(
+              'absolute' => '0',
+              'attach_mode' => 'copy',
+              'path' => 'file_attach',
+            ),
+            'source_imce' => array(
+              'imce_mode' => '0',
+            ),
+            'source_reference' => array(
+              'autocomplete' => '0',
+            ),
+          ),
+          'insert' => 1,
+          'insert_class' => '',
+          'insert_default' => 'link',
+          'insert_styles' => array(
+            'auto' => 0,
+            'colorbox__block-highlight' => 0,
+            'colorbox__bw' => 0,
+            'colorbox__frontpage_slide' => 0,
+            'colorbox__frontpage_slide_bw' => 0,
+            'colorbox__large' => 0,
+            'colorbox__lightbox' => 0,
+            'colorbox__medium' => 0,
+            'colorbox__node' => 0,
+            'colorbox__node-landscape' => 0,
+            'colorbox__node-portrait' => 0,
+            'colorbox__page_slide' => 0,
+            'colorbox__sq_thumb_lg' => 0,
+            'colorbox__sq_thumb_med' => 0,
+            'colorbox__sq_thumb_sm' => 0,
+            'colorbox__sq_thumb_xsm' => 0,
+            'colorbox__square_thumbnail' => 0,
+            'colorbox__teaser-list' => 0,
+            'colorbox__thumbnail' => 0,
+            'image' => 0,
+            'image_block-highlight' => 0,
+            'image_bw' => 0,
+            'image_frontpage_slide' => 0,
+            'image_frontpage_slide_bw' => 0,
+            'image_large' => 0,
+            'image_lightbox' => 0,
+            'image_medium' => 0,
+            'image_node' => 0,
+            'image_node-landscape' => 0,
+            'image_node-portrait' => 0,
+            'image_page_slide' => 0,
+            'image_sq_thumb_lg' => 0,
+            'image_sq_thumb_med' => 0,
+            'image_sq_thumb_sm' => 0,
+            'image_sq_thumb_xsm' => 0,
+            'image_square_thumbnail' => 0,
+            'image_teaser-list' => 0,
+            'image_thumbnail' => 0,
+            'link' => 'link',
+          ),
+          'insert_width' => '',
+          'progress_indicator' => 'bar',
+        ),
+        'type' => 'file_generic',
+        'weight' => '10',
+      ),
+    ),
+  );
+
   // Exported field: 'node-news-field_news_type'
   $fields['node-news-field_news_type'] = array(
     'field_config' => array(
@@ -376,8 +518,9 @@ function parya_news_field_default_fields() {
         ),
         'rss' => array(
           'label' => 'inline',
+          'module' => 'rss_category',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'rss_category',
           'weight' => '3',
         ),
         'teaser' => array(
@@ -468,7 +611,7 @@ function parya_news_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -557,7 +700,7 @@ function parya_news_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -646,7 +789,7 @@ function parya_news_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -674,6 +817,7 @@ function parya_news_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attachment(s)');
   t('Body');
   t('Credit the original author of the article with a byline.');
   t('Main Image');
