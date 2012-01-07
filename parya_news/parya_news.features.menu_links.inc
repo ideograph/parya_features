@@ -24,9 +24,25 @@ function parya_news_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '-48',
   );
+  // Exported menu link: main-menu:news/parya-weekly-news
+  $menu_links['main-menu:news/parya-weekly-news'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news/parya-weekly-news',
+    'router_path' => 'news/parya-weekly-news',
+    'link_title' => 'Parya Weekly News',
+    'options' => array(),
+    'module' => 'system',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-50',
+    'parent_path' => 'news',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('News');
+  t('Parya Weekly News');
 
 
   return $menu_links;

@@ -161,12 +161,6 @@ function parya_news_views_default_views() {
     'und' => 'und',
   );
   $handler->display->display_options['filters']['language']['group'] = 0;
-  /* Filter criterion: Content: Has taxonomy term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'news';
 
   /* Display: News Archive */
   $handler = $view->new_display('page', 'News Archive', 'page');
@@ -339,7 +333,7 @@ function parya_news_views_default_views() {
   );
 
   /* Display: Weekly News Archive */
-  $handler = $view->new_display('page', 'Weekly News Archive', 'page_wekly_news');
+  $handler = $view->new_display('page', 'Weekly News Archive', 'page_weekly_news');
   $handler->display->display_options['display_comment'] = 'a table view of the weekly news';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'node-list';
